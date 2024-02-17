@@ -7,7 +7,7 @@ use function cli\prompt;
 
 function askName(): string
 {
-    $name = prompt('May I have your name?');
+    $name = trim(prompt('May I have your name?'));
     line("Hello, $name!");
     return $name;
 }
@@ -15,7 +15,7 @@ function askName(): string
 function askQuestion(string $question, string $correctAnswer): bool
 {
     line("Question: $question");
-    $answer = prompt('Your answer');
+    $answer = trim(strtolower(prompt('Your answer')));
 
     $isCorrect = ($answer === $correctAnswer);
     if ($isCorrect) {
