@@ -27,12 +27,8 @@ function askQuestion(string $question, string $correctAnswer): bool
     return $isCorrect;
 }
 
-function playGame(string $gameDescription, string $genQuestionCallback, int $winCount = 3)
+function askAllQuestions(string $genQuestionCallback, int $winCount): bool
 {
-    line("Welcome to the Brain Games!");
-    $name = askName();
-    line($gameDescription);
-
     $correctCount = 0;
     while ($correctCount < $winCount) {
         [ $question, $correctAnswer ] = call_user_func($genQuestionCallback);
@@ -42,7 +38,18 @@ function playGame(string $gameDescription, string $genQuestionCallback, int $win
         $correctCount++;
     }
 
-    if ($correctCount < $winCount) {
+    return ($correctCount < $winCount);
+}
+
+function playGame(string $gameDescription, string $genQuestionCallback, int $winCount = 3)
+{
+    line("Welcome to the Brain Games!");
+    $name = askName();
+    line($gameDescription);
+
+    $isWin = askAllQuestions($genQuestionCallback, $winCount);
+
+    if ($isWin) {
         line("Let's try again, $name!");
     } else {
         line("Congratulations, $name!");
