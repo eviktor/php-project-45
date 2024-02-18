@@ -16,6 +16,6 @@ function runGame()
 {
     playGame(
         'Answer "yes" if the number is even, otherwise answer "no".',
-        'BrainGames\Games\EvenGame\generateQuestionCallback'
+        __NAMESPACE__ . '\generateQuestionCallback'
     );
 }

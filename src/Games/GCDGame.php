@@ -19,6 +19,6 @@ function runGame()
 {
     playGame(
         'Find the greatest common divisor of given numbers.',
-        'BrainGames\Games\GCDGame\generateQuestionCallback'
+        __NAMESPACE__ . '\generateQuestionCallback'
     );
 }

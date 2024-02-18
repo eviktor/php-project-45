@@ -20,6 +20,6 @@ function runGame()
 {
     playGame(
         'What is the result of the expression?',
-        'BrainGames\Games\CalcGame\generateQuestionCallback'
+        __NAMESPACE__ . '\generateQuestionCallback'
     );
 }
