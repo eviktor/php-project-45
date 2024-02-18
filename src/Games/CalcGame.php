@@ -12,7 +12,6 @@ function generateQuestionCallback(): array
     $operation = $operations[array_rand($operations)];
 
     $expression = "$number1 $operation $number2";
-    var_dump($expression);
     $correctAnswer = eval("return ($expression);");
     return [ $expression, "$correctAnswer" ];
 }
