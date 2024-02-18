@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\CalcGame;
+namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\playGame;
 
@@ -16,7 +16,7 @@ function generateQuestionCallback(): array
     return [ $expression, "$correctAnswer" ];
 }
 
-function runGame()
+function run()
 {
     playGame(
         'What is the result of the expression?',

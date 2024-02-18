@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\ProgressionGame;
+namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\playGame;
 
@@ -31,7 +31,7 @@ function generateQuestionCallback(): array
     return [ $question, $correctAnswer ];
 }
 
-function runGame()
+function run()
 {
     playGame(
         'Find the greatest common divisor of given numbers.',

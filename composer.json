@@ -10,10 +10,10 @@
             "src/Cli.php",
             "src/Engine.php",
             "src/GCD.php",
-            "src/Games/EvenGame.php",
-            "src/Games/CalcGame.php",
-            "src/Games/GCDGame.php",
-            "src/Games/ProgressionGame.php"
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Games/GCD.php",
+            "src/Games/Progression.php"
         ]
     },
     "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\EvenGame;
+namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\playGame;
 
@@ -12,7 +12,7 @@ function generateQuestionCallback(): array
     return [ $question, $correctAnswer ];
 }
 
-function runGame()
+function run()
 {
     playGame(
         'Answer "yes" if the number is even, otherwise answer "no".',
