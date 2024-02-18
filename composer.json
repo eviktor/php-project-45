@@ -9,8 +9,10 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
+            "src/GCD.php",
             "src/Games/EvenGame.php",
-            "src/Games/CalcGame.php"
+            "src/Games/CalcGame.php",
+            "src/Games/GCDGame.php"
         ]
     },
     "authors": [
