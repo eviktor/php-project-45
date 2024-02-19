@@ -6,6 +6,8 @@ GCD game demo: https://asciinema.org/a/IaiIDi2aH4pLKe9xlfNrFlF88
 
 Progression game demo https://asciinema.org/a/3bALwUTIRyYZ66fHJZ1kMzze1
 
+Prime game demo https://asciinema.org/a/ST5Z3qjwSqBNC63E12urQuM8z
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/eviktor/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/eviktor/php-project-45/actions)
 
