@@ -38,7 +38,7 @@ function askAllQuestions(string $genQuestionCallback, int $winCount): bool
         $correctCount++;
     }
 
-    return ($correctCount < $winCount);
+    return ($correctCount === $winCount);
 }
 
 function playGame(string $gameDescription, string $genQuestionCallback, int $winCount = 3)
@@ -50,8 +50,8 @@ function playGame(string $gameDescription, string $genQuestionCallback, int $win
     $isWin = askAllQuestions($genQuestionCallback, $winCount);
 
     if ($isWin) {
-        line("Let's try again, $name!");
-    } else {
         line("Congratulations, $name!");
+    } else {
+        line("Let's try again, $name!");
     }
 }
