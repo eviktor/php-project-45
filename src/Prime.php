@@ -16,5 +16,5 @@ const PRIMES_LESS_THAN_1000 = [
 
 function isPrimeLessThan1000(int $number): bool
 {
-    return in_array($number, PRIMES_LESS_THAN_1000);
+    return in_array($number, PRIMES_LESS_THAN_1000, true);
 }
