@@ -2,22 +2,25 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\playGame;
-use function BrainGames\Prime\isPrimeLess1000;
+use function BrainGames\Engine\run;
+use function BrainGames\Prime\isPrimeLessThan1000;
 
-function generateQuestionCallback(): array
+use const BrainGames\Engine\MAX_RANDOM_NUMBER;
+
+function buildQuestionCallback(): array
 {
-    $random = rand(2, 100);
+    $random = rand(1, MAX_RANDOM_NUMBER);
+
     $question = "$random";
-    $correctAnswer = isPrimeLess1000($random) ? 'yes' : 'no';
+    $correctAnswer = isPrimeLessThan1000($random) ? 'yes' : 'no';
 
     return [ $question, $correctAnswer ];
 }
 
-function run()
+function runGame()
 {
-    playGame(
+    run(
         'Answer "yes" if given number is prime. Otherwise answer "no".',
-        __NAMESPACE__ . '\generateQuestionCallback'
+        __NAMESPACE__ . '\buildQuestionCallback'
     );
 }

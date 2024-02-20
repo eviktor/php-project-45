@@ -2,12 +2,17 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\playGame;
+use function BrainGames\Engine\run;
 
-function getProgression(int $length): array
+use const BrainGames\Engine\MAX_RANDOM_NUMBER;
+
+const PROGRESSION_LENGTH = 10;
+const PROGRESSION_MAX_STEP = 10;
+
+function genProgression(int $length): array
 {
-    $first = rand(1, 30);
-    $step = rand(1, 10);
+    $first = rand(1, MAX_RANDOM_NUMBER);
+    $step = rand(1, PROGRESSION_MAX_STEP);
 
     $progression = [];
     for ($i = 0; $i < $length; $i++) {
@@ -18,9 +23,9 @@ function getProgression(int $length): array
 }
 
 
-function generateQuestionCallback(): array
+function buildQuestionCallback(): array
 {
-    $progression = getProgression(10);
+    $progression = genProgression(PROGRESSION_LENGTH);
 
     $missingIndex = array_rand($progression);
     $correctAnswer = "$progression[$missingIndex]";
@@ -31,10 +36,10 @@ function generateQuestionCallback(): array
     return [ $question, $correctAnswer ];
 }
 
-function run()
+function runGame()
 {
-    playGame(
+    run(
         'Find the greatest common divisor of given numbers.',
-        __NAMESPACE__ . '\generateQuestionCallback'
+        __NAMESPACE__ . '\buildQuestionCallback'
     );
 }

@@ -2,24 +2,27 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\playGame;
+use function BrainGames\Engine\run;
 
-function generateQuestionCallback(): array
+use const BrainGames\Engine\MAX_RANDOM_NUMBER;
+
+function buildQuestionCallback(): array
 {
+    $a = rand(1, MAX_RANDOM_NUMBER);
+    $b = rand(1, MAX_RANDOM_NUMBER);
     $operations = [ '+', '-', '*' ];
-    $number1 = rand(1, 100);
-    $number2 = rand(1, 100);
     $operation = $operations[array_rand($operations)];
 
-    $expression = "$number1 $operation $number2";
+    $expression = "$a $operation $b";
     $correctAnswer = eval("return ($expression);");
+
     return [ $expression, "$correctAnswer" ];
 }
 
-function run()
+function runGame()
 {
-    playGame(
+    run(
         'What is the result of the expression?',
-        __NAMESPACE__ . '\generateQuestionCallback'
+        __NAMESPACE__ . '\buildQuestionCallback'
     );
 }

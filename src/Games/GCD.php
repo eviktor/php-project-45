@@ -2,23 +2,26 @@
 
 namespace BrainGames\Games\GCD;
 
-use function BrainGames\Engine\playGame;
-use function BrainGames\GCD\getGCD;
+use function BrainGames\Engine\run;
+use function BrainGames\GCD\calcGCD;
 
-function generateQuestionCallback(): array
+use const BrainGames\Engine\MAX_RANDOM_NUMBER;
+
+function buildQuestionCallback(): array
 {
-    $number1 = rand(1, 100);
-    $number2 = rand(1, 100);
+    $a = rand(1, MAX_RANDOM_NUMBER);
+    $b = rand(1, MAX_RANDOM_NUMBER);
 
-    $question = "$number1 $number2";
-    $correctAnswer = getGCD($number1, $number2);
+    $question = "$a $b";
+    $correctAnswer = calcGCD($a, $b);
+
     return [ $question, "$correctAnswer" ];
 }
 
-function run()
+function runGame()
 {
-    playGame(
+    run(
         'Find the greatest common divisor of given numbers.',
-        __NAMESPACE__ . '\generateQuestionCallback'
+        __NAMESPACE__ . '\buildQuestionCallback'
     );
 }

@@ -2,20 +2,24 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\Engine\playGame;
+use function BrainGames\Engine\run;
 
-function generateQuestionCallback(): array
+use const BrainGames\Engine\MAX_RANDOM_NUMBER;
+
+function buildQuestionCallback(): array
 {
-    $rand = rand(1, 100);
+    $rand = rand(1, MAX_RANDOM_NUMBER);
+
     $question = "$rand";
     $correctAnswer = ($rand % 2 === 0 ? 'yes' : 'no');
+
     return [ $question, $correctAnswer ];
 }
 
-function run()
+function runGame()
 {
-    playGame(
+    run(
         'Answer "yes" if the number is even, otherwise answer "no".',
-        __NAMESPACE__ . '\generateQuestionCallback'
+        __NAMESPACE__ . '\buildQuestionCallback'
     );
 }

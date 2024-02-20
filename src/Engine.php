@@ -5,7 +5,15 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function askName(): string
+const DEFAULT_QUESTIONS_COUNT = 3;
+const MAX_RANDOM_NUMBER = 100;
+
+function showWelcomeMessage()
+{
+    line("Welcome to the Brain Games!");
+}
+
+function askNameAndGreet(): string
 {
     $name = trim(prompt('May I have your name?'));
     line("Hello, $name!");
@@ -17,39 +25,41 @@ function askQuestion(string $question, string $correctAnswer): bool
     line("Question: $question");
     $answer = trim(strtolower(prompt('Your answer')));
 
-    $isCorrect = ($answer === $correctAnswer);
-    if ($isCorrect) {
+    if ($answer === $correctAnswer) {
         line('Correct!');
+        return true;
     } else {
         line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
+        return false;
     }
-
-    return $isCorrect;
 }
 
-function askAllQuestions(string $genQuestionCallback, int $winCount): bool
+function askQuestions(array $questions): bool
 {
-    $correctCount = 0;
-    while ($correctCount < $winCount) {
-        [ $question, $correctAnswer ] = call_user_func($genQuestionCallback);
+    foreach ($questions as [ $question, $correctAnswer ]) {
         if (!askQuestion($question, $correctAnswer)) {
-            break;
+            return false;
         }
-        $correctCount++;
     }
-
-    return ($correctCount === $winCount);
+    return true;
 }
 
-function playGame(string $gameDescription, string $genQuestionCallback, int $winCount = 3)
+function prepareQuestions(string $buildQuestionCallback): array
 {
-    line("Welcome to the Brain Games!");
-    $name = askName();
+    $questions = [];
+    for ($i = 0; $i < DEFAULT_QUESTIONS_COUNT; $i++) {
+        $questions[] = call_user_func($buildQuestionCallback);
+    }
+    return $questions;
+}
+
+function run(string $gameDescription, string $buildQuestionCallback)
+{
+    showWelcomeMessage();
+    $name = askNameAndGreet();
     line($gameDescription);
 
-    $isWin = askAllQuestions($genQuestionCallback, $winCount);
-
-    if ($isWin) {
+    if (askQuestions(prepareQuestions($buildQuestionCallback))) {
         line("Congratulations, $name!");
     } else {
         line("Let's try again, $name!");
