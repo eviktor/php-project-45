@@ -44,7 +44,7 @@ function askQuestions(array $questions): bool
     return true;
 }
 
-function prepareQuestions(string $buildQuestionCallback): array
+function prepareQuestions(callable $buildQuestionCallback): array
 {
     $questions = [];
     for ($i = 0; $i < DEFAULT_QUESTIONS_COUNT; $i++) {
@@ -53,7 +53,7 @@ function prepareQuestions(string $buildQuestionCallback): array
     return $questions;
 }
 
-function run(string $gameDescription, string $buildQuestionCallback)
+function run(string $gameDescription, callable $buildQuestionCallback)
 {
     showWelcomeMessage();
     $name = askNameAndGreet();
