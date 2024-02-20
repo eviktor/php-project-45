@@ -39,7 +39,7 @@ function buildQuestionCallback(): array
 function runGame()
 {
     run(
-        'Find the greatest common divisor of given numbers.',
+        'What number is missing in the progression?',
         __NAMESPACE__ . '\buildQuestionCallback'
     );
 }
