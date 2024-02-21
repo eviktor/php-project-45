@@ -1,14 +1,76 @@
-Even game demo: https://asciinema.org/a/v5i2HuBa8D6aJ3DW2Wba112Ro
-
-Calc game demo: https://asciinema.org/a/N1a87pcPwyzKLroB1HbQxVmAQ
-
-GCD game demo: https://asciinema.org/a/IaiIDi2aH4pLKe9xlfNrFlF88
-
-Progression game demo https://asciinema.org/a/3bALwUTIRyYZ66fHJZ1kMzze1
-
-Prime game demo https://asciinema.org/a/ST5Z3qjwSqBNC63E12urQuM8z
-
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/eviktor/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/eviktor/php-project-45/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9f17baf1e8ff557cf493/maintainability)](https://codeclimate.com/github/eviktor/php-project-45/maintainabi```lity)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/9f17baf1e8ff557cf493/maintainability)](https://codeclimate.com/github/eviktor/php-project-45/maintainability)
+# Brain Games
+
+## Description
+
+This is a training project for Hexlet PHP developer course.
+Contains 5 simple CLI games.
+
+## Requirements
+
+* php 5.4.0+
+* composer
+
+## Install
+
+```sh
+git clone https://github.com/eviktor/php-project-45.git
+cd php-project-45
+make install
+```
+
+## Usage
+
+### Even game
+
+Answer if the number is even.
+
+```sh
+make brain-even
+```
+
+Demo: https://asciinema.org/a/v5i2HuBa8D6aJ3DW2Wba112Ro
+
+### Calc game 
+
+Calculate the expression given.
+
+```sh
+make brain-calc
+```
+
+Demo: https://asciinema.org/a/N1a87pcPwyzKLroB1HbQxVmAQ
+
+### GCD game 
+
+Find the greatest common divisor of given numbers.
+
+```sh
+make brain-gcd
+```
+
+Demo: https://asciinema.org/a/IaiIDi2aH4pLKe9xlfNrFlF88
+
+### Progression game 
+
+Find the number missing in the given progression.
+
+```sh
+make brain-progression
+```
+
+Demo https://asciinema.org/a/3bALwUTIRyYZ66fHJZ1kMzze1
+
+### Prime game
+
+Answer if given number is prime.
+
+```sh
+make brain-prime
+```
+
+Demo https://asciinema.org/a/ST5Z3qjwSqBNC63E12urQuM8z
+
