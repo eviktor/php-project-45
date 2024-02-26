@@ -19,7 +19,7 @@ function evalExpression(int $a, int $b, string $operation): int
     return 0;
 }
 
-function buildQuestionCallback(): array
+function buildQuestion(): array
 {
     $a = rand(1, MAX_RANDOM_NUMBER);
     $b = rand(1, MAX_RANDOM_NUMBER);
@@ -36,6 +36,6 @@ function runGame()
 {
     run(
         'What is the result of the expression?',
-        __NAMESPACE__ . '\buildQuestionCallback'
+        __NAMESPACE__ . '\buildQuestion'
     );
 }

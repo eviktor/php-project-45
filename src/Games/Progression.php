@@ -22,8 +22,7 @@ function genProgression(int $length): array
     return $progression;
 }
 
-
-function buildQuestionCallback(): array
+function buildQuestion(): array
 {
     $progression = genProgression(PROGRESSION_LENGTH);
 
@@ -40,6 +39,6 @@ function runGame()
 {
     run(
         'What number is missing in the progression?',
-        __NAMESPACE__ . '\buildQuestionCallback'
+        __NAMESPACE__ . '\buildQuestion'
     );
 }

@@ -6,7 +6,7 @@ use function BrainGames\Engine\run;
 
 use const BrainGames\Engine\MAX_RANDOM_NUMBER;
 
-function buildQuestionCallback(): array
+function buildQuestion(): array
 {
     $rand = rand(1, MAX_RANDOM_NUMBER);
 
@@ -20,6 +20,6 @@ function runGame()
 {
     run(
         'Answer "yes" if the number is even, otherwise answer "no".',
-        __NAMESPACE__ . '\buildQuestionCallback'
+        __NAMESPACE__ . '\buildQuestion'
     );
 }

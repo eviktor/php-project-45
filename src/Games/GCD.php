@@ -18,7 +18,7 @@ function calcGCD(int $a, int $b): int
     return $a + $b;
 }
 
-function buildQuestionCallback(): array
+function buildQuestion(): array
 {
     $a = rand(1, MAX_RANDOM_NUMBER);
     $b = rand(1, MAX_RANDOM_NUMBER);
@@ -33,6 +33,6 @@ function runGame()
 {
     run(
         'Find the greatest common divisor of given numbers.',
-        __NAMESPACE__ . '\buildQuestionCallback'
+        __NAMESPACE__ . '\buildQuestion'
     );
 }

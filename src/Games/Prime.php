@@ -25,7 +25,8 @@ function isPrime($number)
     }
     return true;
 }
-function buildQuestionCallback(): array
+
+function buildQuestion(): array
 {
     $random = rand(1, MAX_RANDOM_NUMBER);
 
@@ -39,6 +40,6 @@ function runGame()
 {
     run(
         'Answer "yes" if given number is prime. Otherwise answer "no".',
-        __NAMESPACE__ . '\buildQuestionCallback'
+        __NAMESPACE__ . '\buildQuestion'
     );
 }

@@ -44,22 +44,22 @@ function askQuestions(array $questions): bool
     return true;
 }
 
-function prepareQuestions(callable $buildQuestionCallback): array
+function prepareQuestions(callable $buildQuestion): array
 {
     $questions = [];
     for ($i = 0; $i < DEFAULT_QUESTIONS_COUNT; $i++) {
-        $questions[] = call_user_func($buildQuestionCallback);
+        $questions[] = call_user_func($buildQuestion);
     }
     return $questions;
 }
 
-function run(string $gameDescription, callable $buildQuestionCallback)
+function run(string $gameDescription, callable $buildQuestion)
 {
     showWelcomeMessage();
     $name = askNameAndGreet();
     line($gameDescription);
 
-    if (askQuestions(prepareQuestions($buildQuestionCallback))) {
+    if (askQuestions(prepareQuestions($buildQuestion))) {
         line("Congratulations, $name!");
     } else {
         line("Let's try again, $name!");
