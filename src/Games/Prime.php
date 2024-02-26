@@ -3,16 +3,34 @@
 namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\run;
-use function BrainGames\Prime\isPrimeLessThan1000;
 
 use const BrainGames\Engine\MAX_RANDOM_NUMBER;
 
+function isPrime($number)
+{
+    if ($number === 1) {
+        return false;
+    }
+    if ($number === 2) {
+        return true;
+    }
+    if ($number % 2 === 0) {
+        return false;
+    }
+
+    for ($i = 3, $maxFactor = (int)sqrt($number); $i <= $maxFactor; $i += 2) {
+        if ($number % $i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
 function buildQuestionCallback(): array
 {
     $random = rand(1, MAX_RANDOM_NUMBER);
 
     $question = "$random";
-    $correctAnswer = isPrimeLessThan1000($random) ? 'yes' : 'no';
+    $correctAnswer = isPrime($random) ? 'yes' : 'no';
 
     return [ $question, $correctAnswer ];
 }

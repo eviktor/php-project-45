@@ -9,8 +9,6 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
-            "src/GCD.php",
-            "src/Prime.php",
             "src/Games/Even.php",
             "src/Games/Calc.php",
             "src/Games/GCD.php",
