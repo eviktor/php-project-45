@@ -6,7 +6,7 @@ use function BrainGames\Engine\run;
 
 use const BrainGames\Engine\MAX_RANDOM_NUMBER;
 
-function isPrime($number)
+function isPrime(int $number): bool
 {
     if ($number === 1) {
         return false;
