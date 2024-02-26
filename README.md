@@ -32,9 +32,11 @@ Answer if the number is even.
 make brain-even
 ```
 
-Demo: https://asciinema.org/a/v5i2HuBa8D6aJ3DW2Wba112Ro
+Demo:
 
-### Calc game 
+[![asciicast](https://asciinema.org/a/v5i2HuBa8D6aJ3DW2Wba112Ro.svg)](https://asciinema.org/a/v5i2HuBa8D6aJ3DW2Wba112Ro)
+
+### Calc game
 
 Calculate the expression given.
 
@@ -42,9 +44,11 @@ Calculate the expression given.
 make brain-calc
 ```
 
-Demo: https://asciinema.org/a/N1a87pcPwyzKLroB1HbQxVmAQ
+Demo:
 
-### GCD game 
+[![asciicast](https://asciinema.org/a/N1a87pcPwyzKLroB1HbQxVmAQ.svg)](https://asciinema.org/a/N1a87pcPwyzKLroB1HbQxVmAQ)
+
+### GCD game
 
 Find the greatest common divisor of given numbers.
 
@@ -52,9 +56,11 @@ Find the greatest common divisor of given numbers.
 make brain-gcd
 ```
 
-Demo: https://asciinema.org/a/IaiIDi2aH4pLKe9xlfNrFlF88
+Demo:
 
-### Progression game 
+[![asciicast](https://asciinema.org/a/IaiIDi2aH4pLKe9xlfNrFlF88.svg)](https://asciinema.org/a/IaiIDi2aH4pLKe9xlfNrFlF88)
+
+### Progression game
 
 Find the number missing in the given progression.
 
@@ -62,7 +68,9 @@ Find the number missing in the given progression.
 make brain-progression
 ```
 
-Demo https://asciinema.org/a/3bALwUTIRyYZ66fHJZ1kMzze1
+Demo:
+
+[![asciicast](https://asciinema.org/a/3bALwUTIRyYZ66fHJZ1kMzze1.svg)](https://asciinema.org/a/3bALwUTIRyYZ66fHJZ1kMzze1)
 
 ### Prime game
 
@@ -72,5 +80,6 @@ Answer if given number is prime.
 make brain-prime
 ```
 
-Demo https://asciinema.org/a/ST5Z3qjwSqBNC63E12urQuM8z
+Demo:
 
+[![asciicast](https://asciinema.org/a/ST5Z3qjwSqBNC63E12urQuM8z.svg)](https://asciinema.org/a/ST5Z3qjwSqBNC63E12urQuM8z)
